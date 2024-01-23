@@ -117,3 +117,195 @@ header .portfolio-row.header-wrap{
     font-weight: 300;
     color: var(--color1)
 }
+
+.portfolio-navbar {
+    display: none; 
+}
+
+.navbar-toggle i {
+    font-size: 1.25rem; 
+    line-height: 30px; 
+    cursor: pointer;
+    color: var(--color1);
+}
+
+/* ========= Responsive Navigation Menu ========= */
+
+.portfolio-navbar {
+    display: block;
+    position: absolute;
+    background-color: rgb(236,241,256);
+    width: 100%;
+    left: 0;
+    top: 60px;
+    padding: 15px;
+    border-top: 5px solid #000;
+    text-align: center; 
+}
+
+
+.portfolio-navbar ul li {
+    display: block;
+}
+.portfolio-navbar ul li a {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 45px; 
+}
+
+/* ====== Style for about section ====== */
+
+#about {
+    paddingtop: 100px; 
+    background-color: var(--bg-color1);
+}
+
+.about-content {
+    align-items: center;
+}
+
+.about-intro {
+    margin: 3rem 0;
+    width: 100%;
+    order: 2;
+    text-align: center; 
+}
+
+.about-text h3 {
+    color: var(--color1)
+    margin-bottom: 10px; 
+}
+
+/*======== CSS Main Heading =======*/
+
+h1 strong,
+h2 strong {
+    background-image: linear-gradient(to right, #977ec7 0%, #f987d6 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/* ======== Style for about image ======= */
+
+.about-image {
+    width: 100;
+    order: 1;   
+    position: relative;
+    z-index: 2;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.about-image::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-image: linear-gradient(11deg, #6ec1e4 0%, #54595f 100%);
+    z-index: -1;
+    transition: all .5s ease-in-out;
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+    box-shadow: 2px 10px 0px 0px rgba(216, 19, 19, 0.16);
+}
+
+.about-image:hover {
+    transform: translateY(-10.5px);
+}
+
+.about-image img {
+    border-radius: 100% 73% 100% 72% / 99% 86% 75% 63%;
+}
+
+.about-image:hover::before {
+    filter: drop-shadow(0 0 30px rgba(130, 237, 255, 0.97));
+}
+
+/*===== Style for resume section =======*/
+#resume{
+    padding: 60px 0;
+    background-color: var(--bg-color2); 
+}
+
+
+/* ===== Resume Intro ======*/ 
+.resume-intro {
+    width: 100%; 
+}
+
+/* ======= Hello Button =======*/ 
+.hello-btn a {
+    display: inline-block;
+    margin: 20 px 0;
+    padding: 15px 45px;
+    color: #FFF; 
+    background-color: #6366f1;
+    line-height: 30px;
+    transition: all 0.3s ease-out 0s;
+}
+
+.hello-btn a:hover {
+    background-color: #293b5f;
+}
+/* ------ Large Devices (desktops, 768px and up) ----------*/
+@media (min-width: 768px) {
+
+     /*======= Responsive Universal CSS Properties =======*/
+
+     h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 3.5rem;
+        text-align: unset;
+        color: var(--color1);
+        font-weight: 600;
+    }
+
+/* ========= Header responsive=========*/
+    header {
+        background-color: transparent;
+        position: absolute;
+        padding: 0 15px;
+    }
+
+    .navbar-toggle i {
+        display: none;
+    }
+
+    .portfolio-navbar {
+        display: block;
+    }
+
+    .portfolio-navbar ul li {
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    .portfolio-navbar ul li a {
+        color: var(--color1);
+        line-height: 65px; 
+    }
+}
+
+/* ========== About Section Responsive =====*/
+
+#about {
+    padding: 175px 0 150px 0;
+}
+
+.about-intro {
+    width: 60%
+    margin: 0;
+    order: 1
+    text-align: unset; 
+}
+
+/* ======= About Image Responsive =======*/
+.about-image {
+    width: 40%;
+    order: 2;
+}
