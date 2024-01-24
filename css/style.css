@@ -249,6 +249,49 @@ h2 strong {
 .hello-btn a:hover {
     background-color: #293b5f;
 }
+
+
+/* ========= Style for resume body ========= */
+
+.resume-body {
+    width: 100%;
+    margin-top: 20px ;
+}
+
+.resume-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    position: relative;
+    padding: 0 10px;
+    background-color: #d5d5d5;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    line-height: 40px;
+    color: #000;
+    cursor: pointer;
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+    transition: .4s;
+}
+
+.btn:not(:last-child) {
+    margin-right: 15px;
+}
+
+.btn:hover,
+.btn.active {
+    background-color: #4d63dd;
+    color: #FFF;
+}
+
+
+
 /* ------ Large Devices (desktops, 768px and up) ----------*/
 @media (min-width: 768px) {
 
