@@ -310,6 +310,93 @@ h2 strong {
     }
 }
 
+.institution, .organization {
+    color: #78add9;
+    font-weight: 400 ;
+}
+
+.years{
+    color: var(--color1)
+}
+
+.qualification-content{
+    position: relative;
+    padding: 1rem 2.1rem;
+}
+
+.qualification-content::after {
+    position: absolute;
+    content: "";
+    height: 7px; 
+    width: 7px;
+    left: 8px;
+    top: 25px;
+    transform: rotate(45deg);
+    background-color: #e15747;
+}
+
+.qualification-content::before {
+    content: "";
+    height: 70%;
+    width: 3px;
+    left: 10px;
+    position: absolute; 
+    background: #e8e8e8;
+}
+
+/*========== Style For Skills Bar Progress ==========*/
+
+.bar-content {
+    margin-bottom: 15px;
+}
+
+.bar-heading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.bar-title,
+.bar-percentage {
+    color: var(--color1); /* Stellen Sie sicher, dass --color1 im Root definiert ist oder ersetzen Sie var(--color1) durch eine spezifische Farbe */
+}
+
+.bar-progress {
+    display: flex;
+    background-color: #e9eeef; /* Hintergrundfarbe des leeren Balkens */
+    height: 8px;
+    border-radius: 5px;
+    width: 100%; /* Volle Breite des Balkenhintergrunds */
+}
+
+.progress-bar {
+    background-color: #75a9d6; /* Füllfarbe des Balkens */
+    border-radius: 5px; /* Eckenradius des gefüllten Balkens */
+    /* Die Breite wird im HTML-Element als Inline-Style gesetzt, zum Beispiel style="width: 75%;" */
+}
+
+/* ------ Flags begin----------*/
+
+.flag {
+    width: 100px; /* Setze eine passende Größe für die Flagge */
+    height: auto; /* Behält das Seitenverhältnis bei */
+    border: 1px solid #ddd; /* Fügt einen leichten Rand hinzu */
+    border-radius: 4px; /* Rundet die Ecken leicht ab */
+}
+
+#Languages{
+    padding: 60px 0;
+    background-color: var(--bg-color1);
+}
+
+.Languages-row{
+    display: grid;
+    grid-template-rows: repeat(1.1fr);
+
+}
+
+/* ------ Flags end----------*/
 
 
 /* ------ Large Devices (desktops, 768px and up) ----------*/
@@ -371,4 +458,44 @@ h2 strong {
 .about-image {
     width: 40%;
     order: 2;
+}
+
+/* ======= resume intro responsive =======*/
+
+.resume-intro{
+    width: 50%;
+    padding-right: 6.25rem;
+}
+
+/* ======= resume Body responsive =======*/
+.resume-body {
+    width: 50%;
+    margin-top: 0;
+    min-height: 400px;
+}
+
+.resume-body h2{
+    display: none;
+}
+
+.resume-heading {
+    padding: 20px 0;
+}
+
+.btn{
+    padding: 0 25px;
+    margin-top:0 ;
+    margin-bottom: 10px;
+}
+
+.qualification-content::after{
+    left: -2px;
+}
+
+.qualification-content::before{
+    left: 0;
+}
+
+.bar-content{
+    margin-bottom: 0;
 }
