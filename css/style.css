@@ -290,6 +290,26 @@ h2 strong {
     color: #FFF;
 }
 
+/* ------ Style for resume tab ----------*/
+.resume-tab {
+    display: none;
+}
+
+.resume-tab.active {
+    display: block;
+    animation: fadeIn 1s ease
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 
 /* ------ Large Devices (desktops, 768px and up) ----------*/
