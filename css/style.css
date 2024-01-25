@@ -84,6 +84,55 @@ body, h1, h2, h3, p, ul, li {
     padding: 0;
 }   
 
+/* ========== Dark And Light Mode Toggle ======== */
+
+.theme-toggle {
+    position: fixed;
+    top: 50%;
+    z-index: 10;
+    right: 0;
+    border: none;
+    background-color: var(--color2);
+}
+
+body:not(.dark) .theme-toggle .lni-night,
+body.dark .theme-toggle .lni-sun {
+    cursor: pointer;
+    color: var(--bg-color2);
+    padding: 10px 10px;
+    display: block;
+    font-size: 1.25rem;
+}
+
+body:not(.dark) .theme-toggle .lni-sun {
+    display: none;
+
+}
+
+body.dark .theme-toggle .lni-night {
+    display: none;
+}
+
+    /*========== Theme Icon Color When Nabar Sticky ========*/
+
+.theme-toggle {
+     background: none;
+    position: static;
+    transform: none;
+}
+
+body:not(.dark) .header-sticky .theme-toggle .lni-night,
+body.dark .header-sticky .theme-toggle .lni-sun {
+    color: #3e4455;
+}
+
+body:not(.dark) .theme-toggle .lni-night,
+body.dark .theme-toggle .lni-sun {
+     color: var(--color2);
+}
+
+
+
 /*======== CSS Header Stick To Top =========*/
 
 header.header-sticky {
@@ -481,6 +530,21 @@ h2 strong {
 
 /* ------ Flags end---------- */
 
+/* ------ CSS Styling Hobbies begin---------- */
+
+#hobbies {
+    padding: 60px 0;
+    background-color: var(--bg-color2);
+}
+
+.filter-wrap{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 /* ------ Style for CSS Contact-Info---------- */
 
 #contact{
@@ -494,12 +558,6 @@ h2 strong {
     gap: 2rem; 
     margin-bottom: 3rem;
 }
-
-.contact-title h2 {
-    color: var(--color2); /* Or whatever color it should be */
-    /* Other styling as needed */
-}
-
 
 .contact-card{
     text-align: center;
@@ -561,6 +619,91 @@ footer {
 /* Adjust as needed */
 copyright-text {
     color: var(--color1);
+}
+
+/*========= Navigation Link When Scroll Active =======*/
+
+.portfolio-navbar ul li a.active-link {
+    font-weight: 800;
+}
+
+/*========= CSS Styling Hobbies Begin =======*/
+.portfolio-wrapper{
+    display: flex;
+    gap: 15px; 
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.portfolio-wrapper .portfolio-col{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.portfolio-item.travel img{
+    border-radius: 5px;
+    height: 500px;
+}
+
+.portfolio-item.skiing img{
+    border-radius: 5px;
+    height: 500px;
+}
+
+.portfolio-item.boxing img{
+    border-radius: 5px;
+    height: 500px;
+}
+
+.portfolio-item.football img{
+    border-radius: 5px;
+    height: 500px
+}
+
+
+/*========= Hobbies Portfolio Gallery begin =========*/
+
+
+.portfolio-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.portfolio-item.show {
+    animation: fadeIn 4.5s ease;
+}
+
+.portfolio-item.hide {
+    display: none;
+}
+
+
+.portfolio-item-content {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    right: 25px;
+    bottom: 25px;
+    background-color: rgba(16, 16, 16, .5);
+    transition: .5s;
+    transform: scale(1.15);
+    opacity: 0;
+}
+
+/*========= Hobbies Portfolio Gallery ends =========*/
+
+/*========= hobbies responsive =========*/
+
+.filter-wrap{
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*========= hobbies Gallery responsive =========*/
+.portfolio-wrapper{
+    flex-direction: column;
 }
 
 /* ------ Large Devices (desktops, 768px and up) ----------*/
@@ -685,7 +828,7 @@ copyright-text {
     display: none;
 }
 
-.contact-card: :nth-of-type(2){
+.contact-card:nth-of-type(2){
     border-left: 1px solid #d9d9d9; 
     border-right: 1px solid #d9d9d9;
 }

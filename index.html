@@ -20,13 +20,16 @@
             <div class="portfolio-navbar">
                 <ul>
                     <li>
-                        <a href="#about" class="navbar-link">Home</a>
+                        <a href="#about" class="navbar-link active-link">Home</a>
                     </li>
                     <li>
                         <a href="#resume" class="navbar-link">Resume</a>
                     </li>
                     <li>
                         <a href="#Languages" class="navbar-link">Languages</a>
+                    </li>
+                    <li>
+                        <a href="#hobbies" class="navbar-link">Hobbies</a>
                     </li>
                     <li>
                         <a href="#contact" class="navbar-link">Contact</a>
@@ -37,6 +40,10 @@
             <div class="navbar-toggle">
                 <i class="lni lni-grid-alt"></i>
             </div>
+            <button type="button" class="theme-toggle">
+                <i class="lni lni-night"></i>
+                <i class="lni lni-sun"></i>
+            </button>
     </header>
     <!--Header Ends-->
    <!--About Section Begin -->
@@ -259,17 +266,75 @@
 </section>
 <!--Languages Section End-->
 
+<!--Hobbies Section End-->
+<section id="hobbies">
+    <div class="portfolio-container">
+        <div class="portfolio-row filter-wrap">
+            <h2><strong>Hobbies</strong></h2>
+            <!--Portfolio Nav Filter Begin-->
+            <div class="portfolio-filter-nav">
+                <button class="btn active" data-id="all" type="button">All</button>
+                <button class="btn active" data-id="skiing" type="button">Skiing</button>
+                <button class="btn active" data-id="boxing" type="button">Boxing</button>
+                <button class="btn active" data-id="travel" type="button">Travel</button>
+                <button class="btn active" data-id="football" type="button">Football</button>
+            </div>
+            <!--Portfolio Nav Filter End-->
+
+            <!-- Main Portfolio Begin-->
+            <div class="portfolio-wrapper">
+                <div class="portfolio-col">
+                    <div class="portfolio-item skiing">
+                        <img src="images/IMG_Ski.jpeg" alt="">
+                        <div class="portfolio-item-content">
+                            <div class="product-title">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item boxing">
+                        <img src="images/IMG_8753.jpeg" alt="">
+                        <div class="portfolio-item-content">
+                            <div class="product-title">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-col">
+                    <div class="portfolio-item travel">
+                        <img src="images/IMG_5361.JPEG" alt="">
+                        <div class="portfolio item-content">
+                            <div class="product-title">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item football">
+                        <img src="images/IMG_7843.jpeg" alt="">
+                        <div class="product-title">
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Main Portfolio Nav End-->
+        </div>
+    </div>
+</section>
+
+<!--Hobbies Section End-->
+
   <!------ Contact Section Begins ------>
   <section id="contact">
     <div class="portfolio-container">
         <!-- Contact General Info Begins -->
         <div class="contact-general">
-
         </div>
         <!-- Contact General Info Ends -->
     </div>
     <div class="portfolio-container">
-        <h2 style="text-align: center;"><strong>Contact Me</strong></h2>
+        <h2 style="text-align: center;"><strong>Let's connect</strong></h2>
             <div class="contact-card">
                 <div class="icon">
                     <i class="lni lni-map-marker"></i>
@@ -283,6 +348,7 @@
                     </span>                    
                 </div>
             </div>
+            <br>
             <div class="contact-card">
                 <div class="icon">
                     <i class="lni lni-phone"></i>
@@ -292,6 +358,7 @@
                     <span>+41 76 454 27 68</span>
                 </div>
             </div>
+            <br>
             <div class="contact-card">
                 <div class="icon">
                     <i class="lni lni-envelope"></i>
@@ -325,9 +392,7 @@
 </footer>
 <!--Footer-section end-->
 
-
-
-
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 
