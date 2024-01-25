@@ -78,9 +78,34 @@ img {
     vertical-align: middle;
 }
 
-body {
+body, h1, h2, h3, p, ul, li {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}   
+
+/*======== CSS Header Stick To Top =========*/
+
+header.header-sticky {
+    position: fixed;
+    background-color: #f5f5f5;
+    z-index: 2000;
+    transition: .4s;
+    box-shadow: 0 4px 6px 0 rgba(12, 0, 46, 0.05);
 }
+
+.header-sticky .brand-name a {
+    color: #3e4455;
+}
+
+.header-sticky .navbar-toggle i {
+    color: #3e4455;
+}
+
+.header-sticky .portfolio-navbar ul li a {
+    color: #343434;
+}
+
 
 /*======== Wrapper ========*/
 
@@ -95,27 +120,34 @@ body {
     flex-wrap: wrap;
 }
 
-/* ======= Style Navigation Bar */
-
-header{
+/* ======= Style Navigation Bar ======= */
+header {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    z-index: 20;
-    transition: .8s;
-    padding: 15px;
-    position: fixed;
     background-color: var(--bg-color1);
+    padding: 15px 0; /* Adjust padding as needed, but ensure it's not causing the white space */
+    z-index: 1000; /* High z-index to ensure the header is above other content */
 }
 
-header .portfolio-row.header-wrap{
-    justify-content: space-between;
+header a {
+    color: inherit; /* Or set to your preferred color */
+    text-decoration: none;
+}
+
+
+header .portfolio-row.header-wrap {
     align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.brand-name a{
+.brand-name a {
     font-size: 1.25rem;
     font-weight: 300;
-    color: var(--color1)
+    color: var(--color1); /* Use your custom variable for color */
 }
 
 .portfolio-navbar {
@@ -143,6 +175,10 @@ header .portfolio-row.header-wrap{
     text-align: center; 
 }
 
+.portfolio-navbar ul {
+    list-style: none;
+    padding-left: 0; /* Reset default padding */
+}
 
 .portfolio-navbar ul li {
     display: block;
@@ -177,7 +213,7 @@ header .portfolio-row.header-wrap{
 }
 
 .about-text h3{
-    color: var(--color1)
+    color: var(--color1);
     margin-bottom: 10px;
 }
 
@@ -195,16 +231,14 @@ h2 strong {
 /* ======== Style for about image ======= */
 
 .about-image {
-    width: 100%;
-    order: 1;   
+    width: 100%; /* Ensures the container scales with the width of its parent */
+    max-width: 650px; /* Increased maximum width the image can have */
+    margin: 0 auto; /* Centers the image within its container */
     position: relative;
     z-index: 2;
     transition-duration: 0.4s;
     cursor: pointer;
-    margin: 0 auto; 
-    flex: 0 0 auto; /* Gibt dem Bildbereich Flexibilität */
-    order: 1; /* Bild zuerst */
-    max-width: 200px;
+    order: 1; /* Keeps the image order if using flexbox in the parent container */
 }
 
 .about-image::before {
@@ -224,10 +258,10 @@ h2 strong {
 }
 
 .about-image img {
-    width: 650px; /* Feste Breite des Bildes */
-    height: 650px; /* Feste Höhe des Bildes */
-    border-radius: 30%; /* Kreisförmige Gestaltung des Bildes */
-    object-fit: cover; /* Sorgt dafür, dass das Bild gut im festgelegten Rahmen aussieht */
+    width: 100%; /* Makes the image responsive to the width of its container */
+    height: auto; /* Maintains the aspect ratio of the image */
+    border-radius: 30%; /* Keeps the border-radius if desired */
+    object-fit: cover; /* Ensures the image covers the area of the container without stretching */
 }
 
 .about-image:hover::before {
@@ -311,6 +345,7 @@ h2 strong {
     animation: fadeIn 1s ease
 }
 
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -390,11 +425,10 @@ h2 strong {
 /* ------ Flags begin---------- */
 
 .flag {
-    width: 150px; /* Setze eine passende Größe für die Flagge */
-    height: auto; /* Behält das Seitenverhältnis bei */
-    border: none; /* Fügt einen leichten Rand hinzu */
-    border-radius: 4px; /* Rundet die Ecken leicht ab */
-    transition: background-color .4s; /* Fügt eine Übergangsanimation hinzu */
+    width: 100px; /* Verkleinert die Flaggen */
+    height: auto;
+    border: none;
+    border-radius: 4px;
 }
 
 #Languages {
@@ -403,23 +437,30 @@ h2 strong {
 }
 
 .languages-row {
-    display: grid;
-    grid-template-rows: repeat(1, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-wrap: nowrap; /* Ensures flags stay in a single row */
+    overflow-x: auto; /* Allows for horizontal scrolling if needed */
+    gap: 1rem; /* Keeps some space between flags */
+    justify-content: space-between; /* Distributes flags evenly */
+    align-items: center; /* Aligns flags vertically */
+    padding: 0 15px; /* Adds padding on the sides */
     margin-top: 2rem;
 }
 
 .languages-card {
-    background: var(--bg-color2);
-    cursor: pointer;
-    border-radius: 5px; 
-    padding: 40px 35px;
+    flex: 0 0 18%; /* Adjusts the flex-basis to distribute flags evenly */
     text-align: center;
-    transition: background-color .4s, transform .4s; /* Hinzugefügt: Hintergrundfarbe Übergang */
+    padding: 10px; /* Adjust padding as needed */
+    min-width: 120px; /* Minimum width for smaller screens */
+    height: auto; /* Adjust height as needed */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
 }
 
-.languages-card:hover .flag {
-    background-color: transparent; /* Blaue Hintergrundfarbe bei Mouseover auf der Flagge */
+
+.languages-card:hover {
+    background-color: #515bd3; /* Color changes on hover */
+    transform: translateY(-5px); /* Lower the lift on hover, from -10px to -5px */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background color */
 }
 
 .language-content h6 {
@@ -431,10 +472,6 @@ h2 strong {
     color: var(--color1);
 }
 
-.languages-card:hover {
-    background-color: #515bd3; /* Blauer Hintergrund bei Mouseover auf der gesamten Karte */
-    transform: translateY(-10.5px); /* Hebt die Karte bei Mouseover an */
-}
 
 .languages-card:hover .icon,
 .languages-card:hover h6,
@@ -444,7 +481,87 @@ h2 strong {
 
 /* ------ Flags end---------- */
 
+/* ------ Style for CSS Contact-Info---------- */
 
+#contact{
+    background-color: var(--bg-color1);
+    padding: 60px 0;
+}
+
+.contact-general{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 2rem; 
+    margin-bottom: 3rem;
+}
+
+.contact-title h2 {
+    color: var(--color2); /* Or whatever color it should be */
+    /* Other styling as needed */
+}
+
+
+.contact-card{
+    text-align: center;
+}
+
+.contact-card .icon i{
+    font-size: 2.5rem;
+    color: var(--color1);
+}
+
+.contact-content{
+    margin-top: 20px;
+}
+
+.contact-content h5{
+    font-size: 1rem;
+    color: var(--color1);
+    font-weight: 500;
+}
+
+.contact-content span{
+    color: var(--color1);
+}
+
+/* ------ Styling for footer section ----------*/
+
+footer {
+    background-color: var(--bg-color2);
+    padding: 20px 0;
+}
+
+.portfolio-row.footer-wrap {
+    display: flex;
+    justify-content: space-between; /* Aligns items on opposite ends */
+    align-items: center;
+    flex-wrap: wrap; /* Allows content to wrap on smaller screens */
+}
+
+.social-icons {
+    display: flex; /* Aligns the social icons horizontally */
+    list-style: none; /* Removes default list styling */
+    padding: 0; /* Removes default padding */
+}
+
+.social-icons li {
+    margin-right: 0.5rem;
+}
+
+.social-icons li:not(:last-child) {
+    border-right: 1px solid var(--color2);
+    padding-right: 0.7rem;
+}
+
+.social-icons li a {
+    color: var(--color1);
+    text-decoration: none; /* Optional: removes underline from links */
+}
+
+/* Adjust as needed */
+copyright-text {
+    color: var(--color1);
+}
 
 /* ------ Large Devices (desktops, 768px and up) ----------*/
 @media (min-width: 768px) {
@@ -495,9 +612,9 @@ h2 strong {
 }
 
 .about-intro {
-    width: 60%
+    width: 60%;
     margin: 0;
-    order: 1
+    order: 1;
     text-align: unset; 
     flex: 1; /* Gibt dem Textbereich mehr Flexibilität */
     order: 2; /* Text danach */
@@ -551,4 +668,36 @@ h2 strong {
     margin-bottom: 0;
 }
 
+/* ======= Language responsive =======*/
+.languages-row{
+    grid-template-columns: repeat(3, 1fr) ;
+}
 
+
+
+/* ======= contact general responsive =======*/
+.contact-general{
+    grid-template-columns: repeat(3,1fr);
+    margin: 4rem 0; 
+}
+
+.contact-general h2{
+    display: none;
+}
+
+.contact-card: :nth-of-type(2){
+    border-left: 1px solid #d9d9d9; 
+    border-right: 1px solid #d9d9d9;
+}
+
+/* ======= Footer responsive =======*/
+
+.portfolio-row.footer-wrap{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright-text{
+    display: block;
+}
