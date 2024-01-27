@@ -113,10 +113,11 @@ body.dark .theme-toggle .lni-night {
     display: none;
 }
 
+
     /*========== Theme Icon Color When Nabar Sticky ========*/
 
 .theme-toggle {
-     background: none;
+    background: none;
     position: static;
     transform: none;
 }
@@ -212,7 +213,7 @@ header .portfolio-row.header-wrap {
 
 /* ========= Responsive Navigation Menu ========= */
 
-.portfolio-navbar {
+.portfolio-navbar.show {
     display: block;
     position: absolute;
     background-color: rgb(236,241,256);
@@ -220,24 +221,17 @@ header .portfolio-row.header-wrap {
     left: 0;
     top: 60px;
     padding: 15px;
-    border-top: 5px solid #000;
-    text-align: center; 
+    border-top: 5px
 }
 
-.portfolio-navbar ul {
-    list-style: none;
-    padding-left: 0; /* Reset default padding */
+.portfolio-navbar ul li{
+    display: inline-block;
+    padding: 0 10px;
 }
 
-.portfolio-navbar ul li {
-    display: block;
-}
 .portfolio-navbar ul li a {
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 0.9rem;
-    line-height: 45px; 
+    color: var(--color1);
+    line-height: 65px
 }
 
 /* ====== Style for about section ====== */
@@ -742,7 +736,7 @@ copyright-text {
         padding: 0 10px;
     }
 
-    .portfolio-navbar ul li a {
+    .portfolio-navbar ul li a{
         color: var(--color1);
         line-height: 65px; 
     }
