@@ -18,6 +18,7 @@ This project was conceived and developed within the framework of the Web Enginee
 ```bash
 git clone https://github.com/teeqson/portfolio-page-khai-duong.git
 cd Portfolio-Page-Khai-Duong.github.io
+start index.html
 ```
 
 ## Alternative way to open the page
