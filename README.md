@@ -16,7 +16,7 @@ This project was conceived and developed within the framework of the Web Enginee
 ## Installation and Setup
 
 ```bash
-git clone https://github.com/teeqson/portfolio-page-khai-duong.git
+git clone https://github.com/teeqson/Portfolio-Page-Khai-Duong.github.io.git
 cd Portfolio-Page-Khai-Duong.github.io
 start index.html
 ```
